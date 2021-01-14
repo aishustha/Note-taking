@@ -1,5 +1,5 @@
 import React from 'react'
-import ListTodo from './ListTodo'
+import ListTodo from '../../pages/todo/ListTodo'
 import styles from './Todo.module.scss'
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Button from '@material-ui/core/Button'
@@ -14,12 +14,13 @@ class Todo extends React.Component {
         key:''
       }
     }
-    this.addItem = this.addItem.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-    this.deleteItem = this.deleteItem.bind(this);
-    this.setUpdate = this.setUpdate.bind(this);
+    // this.addItem = this.addItem.bind(this);
+    //this.handleInput = this.handleInput.bind(this);
+    //this.deleteItem = this.deleteItem.bind(this);
+    //this.setUpdate = this.setUpdate.bind(this);
   }
-  addItem(e){
+  
+   addItem = (e) =>{
     e.preventDefault();
     const newItem = this.state.currentItem;
     if(newItem.text !==""){
@@ -33,15 +34,15 @@ class Todo extends React.Component {
     })
     }
   }
-  handleInput(e){
+  handleInput = (e) =>{
     this.setState({
       currentItem:{
         text: e.target.value,
-        key: Date.now()
+        key: Math.random()
       }
     })
   }
-  deleteItem(key){
+  deleteItem = (key) => {
     const filteredItems= this.state.items.filter(item =>
       item.key!==key);
     this.setState({
@@ -49,7 +50,7 @@ class Todo extends React.Component {
     })
 
   }
-  setUpdate(text,key){
+  setUpdate = (text,key) =>{
     const items = this.state.items;
     items.map(item=>{      
       if(item.key===key){
