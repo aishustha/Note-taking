@@ -14,13 +14,9 @@ class Todo extends React.Component {
         key:''
       }
     }
-    // this.addItem = this.addItem.bind(this);
-    //this.handleInput = this.handleInput.bind(this);
-    //this.deleteItem = this.deleteItem.bind(this);
-    //this.setUpdate = this.setUpdate.bind(this);
   }
   
-   addItem = (e) =>{
+  addItem = (e) =>{
     e.preventDefault();
     const newItem = this.state.currentItem;
     if(newItem.text !==""){
