@@ -1,0 +1,40 @@
+.todoCardContent{
+    text-align: center;
+    width: 100%;
+    padding: 90px;
+    & form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    & .addBtn {
+        margin-left: 20px;
+    }
+
+    & .todoTextarea {
+        width: 100%;
+        border: 1px solid #efefef;
+        border-radius: 0.25rem;
+        padding: 15px;
+        font-size: 20px;
+    }
+}
+
+.gridContent {
+   padding-top: 60px;
+}
+
+.addedContent {
+    width: 100%;
+    border: transparent;
+
+    &:hover, &:focus, &:active {
+        border: transparent;
+        outline: 0;
+    }
+}
+
+.cardTitle {
+    text-align: left;
+}
+
