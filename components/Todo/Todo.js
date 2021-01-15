@@ -15,12 +15,12 @@ class Todo extends React.Component {
       }
     }
   }
-  
+  //2
   addItem = (e) =>{
-    e.preventDefault();
+    e.preventDefault(); //prevent refresh behaviour
     const newItem = this.state.currentItem;
     if(newItem.text !==""){
-      const items = [...this.state.items, newItem];
+      const items = [...this.state.items, newItem]; //destructuring assignments - getting values from arrays and objects into variables
     this.setState({
       items: items,
       currentItem:{
@@ -30,17 +30,19 @@ class Todo extends React.Component {
     })
     }
   }
+  //1
   handleInput = (e) =>{
+    //changing state variables
     this.setState({
       currentItem:{
-        text: e.target.value,
+        text: e.target.value, //entering input fields
         key: Math.random()
       }
     })
   }
-  deleteItem = (key) => {
+  deleteItem = (key) =>{
     const filteredItems= this.state.items.filter(item =>
-      item.key!==key);
+      item.key!==key); //filter all items - key doesn't match
     this.setState({
       items: filteredItems
     })
@@ -69,9 +71,7 @@ class Todo extends React.Component {
           </Button>
         </form>
         <div>{this.state.items.text}</div>
-        
         <ListTodo items={this.state.items} deleteItem={this.deleteItem} setUpdate={this.setUpdate}/>
-  
     </div>
   );
  }

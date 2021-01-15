@@ -3,12 +3,11 @@
     width: 100%;
     padding: 90px;
     & form {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
+        text-align: left;
     }
     & .addBtn {
-        margin-left: 20px;
+        margin-top: 30px;
     }
 
     & .todoTextarea {
@@ -18,15 +17,24 @@
         padding: 15px;
         font-size: 20px;
     }
+
+    & .avatar {
+        background: #3f51b5;
+    }
 }
 
 .gridContent {
    padding-top: 60px;
 }
 
+.gridTitle {
+    background: rgb(63 81 181 / 0.1);
+}
+
 .addedContent {
     width: 100%;
     border: transparent;
+    background: transparent;
 
     &:hover, &:focus, &:active {
         border: transparent;
@@ -36,5 +44,20 @@
 
 .cardTitle {
     text-align: left;
+}
+
+.cardOuter {
+    box-shadow: none!important;
+    border: 1px solid #efefef;
+    outline: 0;
+
+    & i, & svg {
+        color: #3f51b5;
+    }
+
+    & span {
+        font-size: 18px;
+        font-weight: bold;
+    }
 }
 
